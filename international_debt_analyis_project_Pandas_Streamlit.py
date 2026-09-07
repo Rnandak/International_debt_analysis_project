@@ -454,43 +454,43 @@ st.divider()
 st.header("Intermediate Queries")
 st.write("Total debt for each country")
 st.write("SELECT  Country_Name, SUM(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name;")
-ds = pd.read_sql_query("SELECT  Country_Name, SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Country_Name;",databaseconnector("intdebtdetails"))
+ds = pd.read_sql_query("SELECT  Country_Name, SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)
 
 st.write("Top 10 countries with highest total debt")
 st.write("SELECT Country_Name,SUM(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;")
-ds = pd.read_sql_query("SELECT  Country_Name, SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;",databaseconnector("intdebtdetails"))
+ds = pd.read_sql_query("SELECT  Country_Name, SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)
 
 
 st.write("Top 10 countries with highest total debt")
 st.write("SELECT Country_Name,SUM(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;")
-ds = pd.read_sql_query("SELECT  Country_Name, SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;",databaseconnector("intdebtdetails"))
+ds = pd.read_sql_query("SELECT  Country_Name, SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)
 
 st.write("Average debt per country")
 st.write("SELECT Country_Name,AVG(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;")
-ds = pd.read_sql_query("SELECT  Country_Name, AVG(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;",databaseconnector("intdebtdetails"))
+ds = pd.read_sql_query("SELECT  Country_Name, AVG(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)   
 
 st.write("Total debt for each indicator")
 st.write("SELECT Series_Name,SUM(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;")
-ds = pd.read_sql_query("SELECT  Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Series_Name ORDER BY Total_Debt DESC LIMIT 10;",databaseconnector("intdebtdetails"))
+ds = pd.read_sql_query("SELECT  Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Series_Name ORDER BY Total_Debt DESC LIMIT 10;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)   
 
 st.write("Indicator contributing highest total debt")
 st.write("SELECT Series_Name,SUM(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;")
-ds = pd.read_sql_query("SELECT  Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Series_Name ORDER BY Total_Debt DESC LIMIT 1;",databaseconnector("intdebtdetails"))
+ds = pd.read_sql_query("SELECT  Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Series_Name ORDER BY Total_Debt DESC LIMIT 1;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)   
 
 st.write("Country with lowest total debt")
 st.write("SELECT Series_Name,SUM(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;")
-ds = pd.read_sql_query("SELECT  Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Series_Name ORDER BY Total_Debt ASC LIMIT 1;",databaseconnector("intdebtdetails"))
+ds = pd.read_sql_query("SELECT  Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Series_Name ORDER BY Total_Debt ASC LIMIT 1;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)  
 
 st.write("Total debt for each country–indicator combination")
-st.write("SELECT Country_Name,Series_Name,SUM(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;")
-ds = pd.read_sql_query("SELECT  Country_Name,Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Country_Name, Series_Name;",databaseconnector("intdebtdetails"))
+st.write("SELECT Country_Name,SUM(y2000 + y2001 + ... + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name ORDER BY Total_Debt DESC LIMIT 10;")
+ds = pd.read_sql_query("SELECT  Country_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)  
 
 st.write("Count indicators per country")
@@ -500,19 +500,77 @@ st.dataframe(ds,use_container_width=True)
 
 st.write("Countries whose total debt > global average")
 st.write("WITH global_avg AS ( SELECT AVG(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS avg_debt FROM allcountriesdata) SELECT  Country_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata, global_avg GROUP BY Country_Name HAVING Total_Debt > avg_debt;")
-pd.read_sql_query("WITH global_avg AS ( SELECT AVG(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS avg_debt FROM allcountriesdata) SELECT  Country_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata, global_avg GROUP BY Country_Name HAVING Total_Debt > avg_debt;",databaseconnector("intdebtdetails"))
+pd.read_sql_query("SELECT  t.Country_Name,t.Total_Debt FROM (SELECT Country_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 +y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 +y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Country_Name) t JOIN (SELECT AVG(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS avg_debt FROM allcountriesdata) g ON 1=1 WHERE t.Total_Debt > g.avg_debt;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)
 
 st.write("Rank countries by total debt")
 st.write("SELECT Country_Name, SUM(y2000 + y2001 + ... + y2022) AS Total_Debt,RANK() OVER (ORDER BY SUM(y2000 + y2001 + ... + y2022) DESC) AS Debt_Rank FROM allcountriesdata GROUP BY Country_Name;")
-pd.read_sql_query("SELECT SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) as AS Total_Debt,RANK() OVER (ORDER BY SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) DESC) AS Debt_Rank FROM allcountriesdata GROUP BY Country_Name;" ",databaseconnector("intdebtdetails"))
+pd.read_sql_query("SELECT Country_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) as Total_Debt,RANK() OVER (ORDER BY SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) DESC) AS Debt_Rank FROM allcountriesdata GROUP BY Country_Name;", databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)
 
 st.divider()
 st.header("Advanced Queries")
 st.write("Top 5 indicators contributing most to global debt")
-ds = pd.read_sql_query("SELECT  Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Global_Debt AS Total_Debt FROM allcountriesdata GROUP BY Series_Name ORDER BY Total_Debt DESC LIMIT 5;",databaseconnector("intdebtdetails"))
+ds = pd.read_sql_query("SELECT  Series_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS Total_Debt FROM allcountriesdata GROUP BY Series_Name ORDER BY Total_Debt DESC LIMIT 5 ;",databaseconnector("intdebtdetails"))
 st.dataframe(ds,use_container_width=True)  
+
+
+st.divider()
+st.write("Percentage contribution of each country to total global debt")
+st.write("SELECT country,SUM(debt) AS country_total,(SUM(debt) * 100.0 / (SELECT SUM(debt) FROM allcountries)) AS pct_contribution FROM allcountries GROUP BY country ORDER BY pct_contribution DESC;")
+ds = pd.read_sql_query("SELECT Country_Name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS country_total,(SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) * 100.0 / (SELECT SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) FROM allcountriesdata)) AS pct_contribution FROM allcountriesdata GROUP BY country_name ORDER BY pct_contribution DESC;",databaseconnector("intdebtdetails"))
+st.dataframe(ds,use_container_width=True)  
+
+st.divider()
+st.write("Top 3 countries for each indicator")
+st.write("SELECT * FROM ( SELECT Series_Name,Country_Name,debt,ROW_NUMBER() OVER (PARTITION BY Series_Name ORDER BY debt DESC) AS rnk FROM allcountries) t WHERE rnk <= 3;")
+ds = pd.read_sql_query("SELECT * FROM ( SELECT Series_Name, Country_Name, SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS debt, ROW_NUMBER() OVER (PARTITION BY Series_Name ORDER BY SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) DESC) AS rnk FROM allcountriesdata GROUP BY Series_Name, Country_Name ) t WHERE rnk <= 3;",databaseconnector("intdebtdetails"))
+st.dataframe(ds,use_container_width=True)
+
+st.divider()
+st.write("Difference between maximum and minimum debt for each country")
+st.write("SELECT Country_Name,MAX(debt) - MIN(debt) AS debt_range FROM allcountriesdata GROUP BY country;")
+ds = pd.read_sql_query("SELECT Country_Name,MAX(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) - MIN(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS debt_range FROM allcountriesdata GROUP BY Country_Name;",databaseconnector("intdebtdetails"))
+st.dataframe(ds,use_container_width=True)
+
+
+st.divider()
+st.write("Create a view for top 10 countries with highest total debt")
+st.write("CREATE VIEW top10_countries_debt AS SELECT * FROM (SELECT country_name,SUM(debt) AS ttl,ROW_NUMBER() OVER (ORDER BY SUM(debt) DESC) AS rnk FROM allcountries GROUP BY Country_Name) t WHERE rnk <= 10;")
+qry = """CREATE VIEW top10_countries_debt AS SELECT * FROM (SELECT country_name,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) AS ttl,ROW_NUMBER() OVER (ORDER BY SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) DESC) AS rnk FROM allcountriesdata GROUP BY Country_Name) t WHERE rnk <= 10;"""
+conn = databaseconnector("intdebtdetails")
+cursor = conn.cursor()
+cursor.execute("DROP VIEW  IF EXISTS top10_countries_debt;")
+cursor.execute(qry)
+
+st.divider()
+st.write("Categorize countries into High / Medium / Low debt")
+st.write("SELECT country,indicator,SUM(y2000 + y2001 + y2002 + y2003 + y2004 + y2005 + y2006 + y2007 + y2008 + y2009 + y2010 + y2011 + y2012 + y2013 + y2014 + y2015 + y2016 + y2017 + y2018 + y2019 + y2020 + y2021 + y2022) as debt OVER (PARTITION BY country ORDER BY indicator) AS cumulative_debt FROM allcountries;")
+ds = pd.read_sql_query("SELECT Country_Name,Series_Name,debt,SUM(debt) OVER (PARTITION BY Country_Name ORDER BY Series_Name) AS cumulative_debt FROM (SELECT Country_Name,Series_Name,SUM(y2000+y2001+y2002+y2003+y2004+y2005+y2006+y2007+y2008+y2009+y2010+y2011+y2012+y2013+y2014+y2015+y2016+y2017+y2018+y2019+y2020+y2021+y2022) AS debt FROM allcountriesdata GROUP BY Country_Name,Series_Name) t;",databaseconnector("intdebtdetails"))
+st.dataframe(ds,use_container_width=True)
+
+
+st.divider()
+st.write("Countries contributing more than 5% of global debt")
+
+ds = pd.read_sql_query(
+    "SELECT Country_Name,SUM(y2000+y2001+y2002+y2003+y2004+y2005+y2006+y2007+y2008+y2009+y2010+y2011+y2012+y2013+y2014+y2015+y2016+y2017+y2018+y2019+y2020+y2021+y2022) AS ttl,(SUM(y2000+y2001+y2002+y2003+y2004+y2005+y2006+y2007+y2008+y2009+y2010+y2011+y2012+y2013+y2014+y2015+y2016+y2017+y2018+y2019+y2020+y2021+y2022)*100.0/(SELECT SUM(y2000+y2001+y2002+y2003+y2004+y2005+y2006+y2007+y2008+y2009+y2010+y2011+y2012+y2013+y2014+y2015+y2016+y2017+y2018+y2019+y2020+y2021+y2022) FROM allcountriesdata)) AS pct FROM allcountriesdata GROUP BY Country_Name HAVING pct > 5;",
+    databaseconnector("intdebtdetails")
+)
+
+st.dataframe(ds, use_container_width=True)
+
+
+st.divider()
+st.write("Most dominant indicator for each country")
+
+ds = pd.read_sql_query(
+    "SELECT * FROM (SELECT Country_Name,Series_Name,SUM(y2000+y2001+y2002+y2003+y2004+y2005+y2006+y2007+y2008+y2009+y2010+y2011+y2012+y2013+y2014+y2015+y2016+y2017+y2018+y2019+y2020+y2021+y2022) AS ttl,ROW_NUMBER() OVER (PARTITION BY Country_Name ORDER BY SUM(y2000+y2001+y2002+y2003+y2004+y2005+y2006+y2007+y2008+y2009+y2010+y2011+y2012+y2013+y2014+y2015+y2016+y2017+y2018+y2019+y2020+y2021+y2022) DESC) AS rnk FROM allcountriesdata GROUP BY Country_Name,Series_Name) t WHERE rnk = 1;",
+    databaseconnector("intdebtdetails")
+)
+
+st.dataframe(ds, use_container_width=True)
+
 
 
 
